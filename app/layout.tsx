@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Raleway, Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import "./globals.css";
 import { ToasterProvider } from "@/lib/ToasterProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({
+  subsets: ["latin"]
+});
 
 export const metadata: Metadata = {
   title: "eshop-store",
@@ -19,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${raleway.className}`}>
         <ClerkProvider>
           <ToasterProvider />
           {children}
