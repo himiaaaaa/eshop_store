@@ -32,16 +32,16 @@ export default function Component() {
   const menuItems = ['Home', 'Products', 'Collections', 'Blogs', 'Contact']
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       {/* Main Header */}
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out ${
-        isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto bg-primary h-20'
+        isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto bg-none h-20'
       }`}>
         <div className="container mx-auto px-4 h-full">
           {/* Large Screen Layout */}
           <div className="hidden md:grid grid-cols-[auto_1fr_auto] items-center h-full">
             <div className="flex items-center gap-2">
-              <Image src={isScrolled ? favicon : whitepaw}  alt="logo" width={50} height={50} />
+              <Image src={whitepaw}  alt="logo" width={50} height={50} />
               {/* <h1 className="font-bold text-2xl text-primary-foreground">Paws</h1> */}
             </div>
             <nav className="justify-self-start ml-8">
@@ -72,7 +72,7 @@ export default function Component() {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
             <div className="flex items-center">
-              <Image src={isScrolled ? favicon : whitepaw}  alt="logo" width={50} height={50} />
+              <Image src={whitepaw}  alt="logo" width={50} height={50} />
             </div>
             <div className="flex items-center space-x-2">
               <Button variant="whiteghost" size="icon" aria-label="Search">
@@ -159,6 +159,6 @@ export default function Component() {
           </div>
         )}
       </div>
-    </div>
+    </>
   )
 }
