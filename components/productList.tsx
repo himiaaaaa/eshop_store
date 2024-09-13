@@ -85,7 +85,7 @@ const products = [
       },
   ]
   
-  export default function Example() {
+  export default function ProductList() {
     return (
       <div className="w-full px-8 py-10 lg:py-14">
         <div className="container mx-auto flex flex-col gap-14">
