@@ -2,6 +2,7 @@
 
 import Category from "@/components/category";
 import Collections from "@/components/collections";
+import ProductList from "@/components/productList";
 import Hero from "@/components/hero";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
     <Hero />
     <Category />
     <Collections />
+    <ProductList />
     </>
   );
 }

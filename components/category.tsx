@@ -35,7 +35,7 @@ const categories = [
 
 const CategorySection = () => {
   return (
-    <div className="w-full px-8 py-10 lg:py-24">
+    <div className="w-full px-8 py-10 lg:py-14">
       <div className="container mx-auto flex flex-col gap-14">
         {/* Header Section */}
         <div className="flex w-full px-4 flex-col sm:flex-row sm:justify-between sm:items-center gap-8">
