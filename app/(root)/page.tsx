@@ -5,6 +5,7 @@ import Collections from "@/components/collections";
 import ProductList from "@/components/productList";
 import Hero from "@/components/hero";
 import Service from "@/components/service";
+import CTA from "@/components/cta";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
     <Collections />
     <ProductList />
     <Service />
+    <CTA />
     </>
   );
 }
