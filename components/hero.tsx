@@ -16,7 +16,7 @@ export default function Hero() {
       />
       <div className="absolute top-0 left-0 w-2/3 h-full flex items-center">
         <div className="container mx-auto px-6 py-6 md:px-8 lg:px-16 flex flex-col items-center">
-          <h1 className="italic text-center text-3xl md:text-8xl font-black text-white">
+          <h1 className="italic text-center text-3xl md:text-8xl font-black text-white tracking-tighter">
             <span className="block md:text-6xl mb-3">HIGN QUALITY</span> PET FOOD
           </h1>
           <p className="text-center text-lg md:text-xl text-white mt-4">
