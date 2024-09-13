@@ -6,6 +6,7 @@ import ProductList from "@/components/productList";
 import Hero from "@/components/hero";
 import Service from "@/components/service";
 import CTA from "@/components/cta";
+import Brands from '@/components/brand'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
     <ProductList />
     <Service />
     <CTA />
+    <Brands />
     </>
   );
 }
