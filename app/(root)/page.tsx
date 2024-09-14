@@ -1,5 +1,3 @@
-"use client";
-
 import Category from "@/components/category";
 import Collections from "@/components/collections";
 import ProductList from "@/components/productList";
@@ -9,7 +7,8 @@ import CTA from "@/components/cta";
 import Brands from '@/components/brand'
 import Footer from "@/components/footer";
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <>
     <Hero />
