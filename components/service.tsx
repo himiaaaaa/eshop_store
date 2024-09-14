@@ -29,7 +29,7 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-500">
                 Free Same-Day Delivery
               </h5>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
@@ -50,7 +50,7 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-500">
                 30 Day Return
               </h5>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
@@ -70,7 +70,7 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-500">
                 Security payment
               </h5>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
@@ -90,7 +90,7 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-500">
                 24/7 Support
               </h5>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
