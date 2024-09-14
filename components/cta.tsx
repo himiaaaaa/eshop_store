@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const CTA = () => {
@@ -10,7 +11,7 @@ const CTA = () => {
       <div className=" container mx-auto px-4 flex flex-row items-center justify-center">
         {/* Hidden on large screens */}
         <figure className="cta-banner hidden lg:block">
-          <img
+          <Image
             src="/cta-banner.png"
             width="900"
             height="660"
@@ -21,7 +22,7 @@ const CTA = () => {
         </figure>
 
         <div className="cta-content text-left">
-          <img
+          <Image
             src="/cta-icon.png"
             width="120"
             height="35"

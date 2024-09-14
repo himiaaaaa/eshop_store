@@ -1,6 +1,6 @@
 import Category from "@/components/category";
 import Collections from "@/components/collections";
-import ProductList from "@/components/productList";
+import ProductList from "@/components/product/productList";
 import Hero from "@/components/hero";
 import Service from "@/components/service";
 import CTA from "@/components/cta";
