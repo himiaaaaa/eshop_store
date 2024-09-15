@@ -15,6 +15,7 @@ type ProductType = {
   collections: [CollectionType];
   tags: [string];
   sizes: [string];
+  flavors: [string];
   colors: [string];
   price: number;
   expense: number;

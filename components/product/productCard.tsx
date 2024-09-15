@@ -3,73 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useUser } from "@clerk/nextjs";
-import { useEffect, useState } from "react";
-import { Heart } from "lucide-react";
-import { useRouter } from "next/navigation";
+import ClickableHeart from "../clickableHeart";
 
 interface ProductCardProps {
     product: ProductType;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }: ProductCardProps) => {
-  const { user } = useUser();
-  const router = useRouter();
-
-  const [loading, setLoading] = useState(false);
-  const [signedInUser, setSignedInUser] = useState<UserType | null>(null);
-  const [isLiked, setIsLiked] = useState(false);
-
-  const getUser = async () => {
-
-    try {
-      setLoading(true);
-
-      const res = await fetch("/api/users");
-      const data = await res.json();
-
-      setSignedInUser(data)
-      setIsLiked(data.wishlist.includes(product._id));
-
-      setLoading(false);
-
-    } catch (err) {
-
-      console.log("[users_GET_error]", err);
-
-    }
-  };
-
-  useEffect(() => {
-    if (user) {
-      getUser();
-    }
-  }, [user]);
-
-  const handleLike = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault(); //prevent Link submit
-
-    try {
-      if (!user) {
-
-        router.push("/sign-in");
-        return;
-
-      } else {
-
-        const res = await fetch("/api/users/wishlist", {
-          method: "POST",
-          body: JSON.stringify({ productId: product._id }),
-        });
-        
-        const updatedUser = await res.json();
-        setIsLiked(updatedUser.wishlist.includes(product._id));
-       
-      }
-    } catch (err) {
-      console.log("[wishlist_POST]", err);
-    }
-  };
 
   return (
     <Link
@@ -97,9 +37,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }: ProductCardProps) 
             ${product.price}
           </p>
         </div>
-        <button onClick={handleLike}>
-          <Heart fill={`${isLiked? "orange": "white"}`}/>
-        </button>
+        <ClickableHeart product={product} />
       </div>
     </Link>
   );
