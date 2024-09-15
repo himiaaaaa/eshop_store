@@ -5,6 +5,8 @@ import { Check, MinusCircle, PlusCircle } from "lucide-react";
 import useCart from "@/lib/hooks/useCart";
 import Image from "next/image";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 
 const policies = [
@@ -38,8 +40,10 @@ const policies = [
   },
 ];
 
-export default function Example() {
+export default function Cart() {
   const cart = useCart();
+  const router = useRouter();
+  const { user } = useUser();
 
   console.log("cart", cart);
 
@@ -52,10 +56,40 @@ export default function Example() {
   let totalPlus;
 
   if (totalRounded < 300) {
-    totalPlus = totalRounded + 8 + totalRounded * 0.2;
+    totalPlus = totalRounded + 8 + totalRounded * 0.255;
   } else {
-    totalPlus = totalRounded + totalRounded * 0.2;
+    totalPlus = totalRounded + totalRounded * 0.255;
   }
+
+  const customer = {
+    clerkId: user?.id,
+    email: user?.emailAddresses[0].emailAddress,
+    name: user?.fullName,
+  };
+
+  const handleCheckout = async () => {
+    try {
+      if (!user) {
+
+        router.push("sign-in");
+
+      } else {
+
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
+          method: "POST",
+          body: JSON.stringify({ cartItems: cart.cartItems, customer }),
+        });
+
+        const data = await res.json();
+
+        window.location.href = data.url;
+
+        console.log('data', data);
+      }
+    } catch (err) {
+      console.log("[checkout_POST]", err);
+    }
+  };
 
   return (
     <div className="bg-white">
@@ -66,7 +100,7 @@ export default function Example() {
               Shopping Cart
             </h1>
 
-            <form className="mt-12">
+            <div className="mt-12">
               {cart.cartItems.length === 0 ? (
                 <p className="text-body-bold">No item in cart</p>
               ) : (
@@ -205,7 +239,7 @@ export default function Example() {
                       <div className="py-4 flex items-center justify-between">
                         <dt className="text-gray-600">Tax</dt>
                         <dd className="font-medium text-gray-900">
-                          ${(totalRounded * 0.2).toFixed(2)}
+                          ${(totalRounded * 0.255).toFixed(2)}
                         </dd>
                       </div>
                       <div className="py-4 flex items-center justify-between">
@@ -221,8 +255,9 @@ export default function Example() {
                 </div>
                 <div className="mt-10">
                   <button
-                    type="submit"
                     className="w-full bg-orange-500 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                    onClick={handleCheckout}
+                    type="submit"
                   >
                     Checkout
                   </button>
@@ -240,7 +275,7 @@ export default function Example() {
                   </p>
                 </div>
               </section>
-            </form>
+            </div>
           </div>
         </div>
 

@@ -26,9 +26,7 @@ export default function RootLayout({
       <body className={`${raleway.className}`}>
         <ClerkProvider>
           <ToasterProvider />
-          <NavBar />
           {children}
-          <Footer />
         </ClerkProvider>
       </body>
     </html>
