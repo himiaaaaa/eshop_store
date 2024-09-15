@@ -5,6 +5,7 @@ import NavBar from '@/components/navbar'
 
 import "./globals.css";
 import { ToasterProvider } from "@/lib/ToasterProvider";
+import Footer from "@/components/footer";
 
 const raleway = Raleway({
   subsets: ["latin"]
@@ -27,6 +28,7 @@ export default function RootLayout({
           <ToasterProvider />
           <NavBar />
           {children}
+          <Footer />
         </ClerkProvider>
       </body>
     </html>

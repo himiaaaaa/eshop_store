@@ -14,9 +14,10 @@ import {
   TabPanel,
   Description,
 } from "@headlessui/react";
-import { Check, Minus, Plus } from "lucide-react";
+import { Check, Minus, MinusCircle, Plus, PlusCircle } from "lucide-react";
 import Image from "next/image";
 import ClickableHeart from "../clickableHeart";
+import useCart from "@/lib/hooks/useCart";
 
 const product = {
   name: "Zip Tote Basket",
@@ -101,6 +102,9 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
   const [selectedColor, setSelectedColor] = useState(productInfo.colors[0]);
   const [selectedFlavor, setSelectedFlavor] = useState(productInfo?.flavors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const cart = useCart()
 
   console.log("productinfo", productInfo);
 
@@ -339,10 +343,33 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                 )}
               </div>
 
+              <div className="flex flex-col gap-2 mt-5">
+                <p className="block text-sm font-medium text-gray-700">Quantity</p>
+                <div className="flex gap-4 items-center">
+                  <MinusCircle
+                    className="hover:text-red-1 cursor-pointer"
+                    onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+                  />
+                  <p className="text-body-bold">{quantity}</p>
+                  <PlusCircle
+                    className="hover:text-red-1 cursor-pointer"
+                    onClick={() => setQuantity(quantity + 1)}
+                  />
+                </div>
+              </div>
+
               <div className="mt-10 flex sm:flex-col1">
                 <button
-                  type="submit"
                   className="max-w-xs flex-1 bg-orange-400 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-orange-400/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full"
+                  onClick={() => {
+                    cart.addItem({
+                      item: productInfo,
+                      quantity,
+                      color: selectedColor,
+                      flavor: selectedFlavor,
+                      size: selectedSize,
+                    });
+                  }}
                 >
                   Add to bag
                 </button>
@@ -357,13 +384,11 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
             </form>
 
             <section aria-labelledby="details-heading" className="mt-12">
-              
               <h2 id="details-heading" className="sr-only">
                 Additional details
               </h2>
 
               <div className="border-t divide-y divide-gray-200">
-
                 {/* description */}
                 <Disclosure as="div">
                   {({ open }) => (
@@ -489,7 +514,6 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                     </>
                   )}
                 </Disclosure>
-
               </div>
             </section>
           </div>

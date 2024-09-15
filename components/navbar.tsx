@@ -17,6 +17,7 @@ import favicon from "@/app/favicon.ico";
 import Link from "next/link";
 
 import { useUser, UserButton } from "@clerk/nextjs";
+import useCart from "@/lib/hooks/useCart";
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,6 +25,8 @@ export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { user } = useUser();
+
+  const cart = useCart();
 
   console.log("user", user);
 
@@ -115,15 +118,22 @@ export default function NavBar() {
                 </Link>
               )}
 
-              <Link href="/cart">
-                <Button
-                  variant="whiteghost"
-                  size="icon"
-                  aria-label="Shopping Basket"
-                >
-                  <ShoppingBasket className="h-5 w-5" />
-                </Button>
-              </Link>
+              <div className="relative">
+                <Link href="/cart">
+                  <Button
+                    variant="whiteghost"
+                    size="icon"
+                    aria-label="Shopping Basket"
+                  >
+                    <ShoppingBasket className="h-5 w-5" />
+                  </Button>
+                  {cart.cartItems.length > 0 && (
+                    <span className="absolute top-0 right-0 inline-flex items-center justify-center h-4 w-4 rounded-full bg-red-500 text-white text-xs font-bold">
+                      {cart.cartItems.length}
+                    </span>
+                  )}
+                </Link>
+              </div>
 
               <Link href={user ? "/orders" : "/sign-in"}>
                 <Button variant="whiteghost" size="icon" aria-label="orders">
@@ -233,11 +243,18 @@ export default function NavBar() {
               </Link>
             )}
 
-            <Button variant="ghost" size="icon" aria-label="Shopping Basket">
-              <Link href="/cart">
-                <ShoppingBasket className="h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="relative">
+              <Button variant="ghost" size="icon" aria-label="Shopping Basket">
+                <Link href="/cart">
+                  <ShoppingBasket className="h-4 w-4" />
+                </Link>
+              </Button>
+              {cart.cartItems.length > 0 && (
+                <span className="absolute top-0 right-0 inline-flex items-center justify-center h-4 w-4 rounded-full bg-red-500 text-white text-xs font-bold">
+                  {cart.cartItems.length}
+                </span>
+              )}
+            </div>
           </div>
 
           <Button

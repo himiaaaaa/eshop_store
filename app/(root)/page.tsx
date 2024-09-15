@@ -5,7 +5,6 @@ import Hero from "@/components/hero";
 import Service from "@/components/service";
 import CTA from "@/components/cta";
 import Brands from '@/components/brand'
-import Footer from "@/components/footer";
 
 export default async function Home() {
 
@@ -18,7 +17,6 @@ export default async function Home() {
     <Service />
     <CTA />
     <Brands />
-    <Footer />
     </>
   );
 }
