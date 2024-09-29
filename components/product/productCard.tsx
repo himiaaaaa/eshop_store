@@ -7,9 +7,10 @@ import ClickableHeart from "../clickableHeart";
 
 interface ProductCardProps {
     product: ProductType;
+    updateSignedInUser?: (updatedUser: UserType) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }: ProductCardProps) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, updateSignedInUser }: ProductCardProps) => {
 
   return (
     <Link
@@ -37,7 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }: ProductCardProps) 
             ${product.price}
           </p>
         </div>
-        <ClickableHeart product={product} />
+        <ClickableHeart product={product} updateSignedInUser={updateSignedInUser}  />
       </div>
     </Link>
   );

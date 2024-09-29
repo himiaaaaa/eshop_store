@@ -7,9 +7,10 @@ import { useEffect, useState } from "react";
 
 interface HeartFavoriteProps {
   product: ProductType;
+  updateSignedInUser?: (updatedUser: UserType) => void;
 }
 
-const ClickableHeart = ({ product }: HeartFavoriteProps) => {
+const ClickableHeart = ({ product, updateSignedInUser }: HeartFavoriteProps) => {
   const router = useRouter();
   const { user } = useUser();
 
@@ -47,6 +48,8 @@ const ClickableHeart = ({ product }: HeartFavoriteProps) => {
         });
         const updatedUser = await res.json();
         setIsLiked(updatedUser.wishlist.includes(product._id));
+        updateSignedInUser && updateSignedInUser(updatedUser);
+        
       }
     } catch (err) {
       console.log("[wishlist_POST_error]", err);
