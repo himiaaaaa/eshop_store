@@ -18,11 +18,16 @@ import Link from "next/link";
 
 import { useUser, UserButton } from "@clerk/nextjs";
 import useCart from "@/lib/hooks/useCart";
+import { useRouter } from "next/navigation";
+import { Input } from "./ui/input";
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showFloatingMenu, setShowFloatingMenu] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [query, setQuery] = useState("");
+
+  const router = useRouter();
 
   const { user } = useUser();
 
@@ -69,6 +74,7 @@ export default function NavBar() {
     },
   ];
 
+
   return (
     <>
       {/* Main Header */}
@@ -97,8 +103,21 @@ export default function NavBar() {
                 ))}
               </ul>
             </nav>
+
             <div className="flex items-center space-x-4">
-              <Button variant="whiteghost" size="icon" aria-label="Search">
+              <Input
+                className="max-sm:max-w-[120px] bg-none "
+                placeholder="Search..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <Button 
+                variant="whiteghost" 
+                size="icon" 
+                aria-label="Search" 
+                disabled={query === ""}
+                onClick={() => router.push(`/search/${query}`)}
+              >
                 <Search className="h-5 w-5" />
               </Button>
 
@@ -163,9 +182,9 @@ export default function NavBar() {
             </div>
 
             <div className="flex items-center space-x-2">
-              <Button variant="whiteghost" size="icon" aria-label="Search">
+              {/* <Button variant="whiteghost" size="icon" aria-label="Search">
                 <Search className="h-5 w-5" />
-              </Button>
+              </Button> */}
 
               {user ? (
                 <UserButton />
@@ -229,9 +248,9 @@ export default function NavBar() {
             </ul>
           </nav>
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="icon" aria-label="Search">
+            {/* <Button variant="ghost" size="icon" aria-label="Search">
               <Search className="h-4 w-4" />
-            </Button>
+            </Button> */}
 
             {user ? (
               <UserButton />
