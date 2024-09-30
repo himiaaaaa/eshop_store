@@ -19,18 +19,17 @@ import Image from "next/image";
 import ClickableHeart from "../clickableHeart";
 import useCart from "@/lib/hooks/useCart";
 
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
-  const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedFlavor, setSelectedFlavor] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(productInfo?.colors[0]);
+  const [selectedFlavor, setSelectedFlavor] = useState(productInfo?.flavors[0]);
+  const [selectedSize, setSelectedSize] = useState(productInfo?.sizes[0]);
   const [quantity, setQuantity] = useState<number>(1);
 
-  const cart = useCart()
+  const cart = useCart();
 
   console.log("productinfo", productInfo);
 
@@ -113,6 +112,7 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
             <form className="mt-6">
               <div>
                 {/* Colors */}
+
                 {productInfo.colors.length > 0 && (
                   <div className="mt-5">
                     <RadioGroup
@@ -128,14 +128,14 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                             as="div"
                             key={color}
                             value={color}
-                            className={({ active }) =>
+                            className={({ checked }) =>
                               classNames(
-                                active ? "ring-2 ring-indigo-500" : "",
+                                checked ? "ring-2 ring-orange-500" : "",
                                 "relative block border border-gray-300 rounded-lg p-2 cursor-pointer focus:outline-none"
                               )
                             }
                           >
-                            {({ active, checked }) => (
+                            {({ checked }) => (
                               <>
                                 <Label
                                   as="p"
@@ -145,11 +145,10 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                                 </Label>
                                 <div
                                   className={classNames(
-                                    active ? "border" : "border-2",
                                     checked
                                       ? "border-orange-500"
                                       : "border-transparent",
-                                    "absolute -inset-px rounded-lg pointer-events-none"
+                                    "absolute -inset-px rounded-lg pointer-events-none border-2"
                                   )}
                                   aria-hidden="true"
                                 />
@@ -178,14 +177,14 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                             as="div"
                             key={flavor}
                             value={flavor}
-                            className={({ active }) =>
+                            className={({ checked }) =>
                               classNames(
-                                active ? "ring-2 ring-indigo-500" : "",
+                                checked ? "ring-2 ring-orange-500" : "",
                                 "relative block border border-gray-300 rounded-lg p-2 cursor-pointer focus:outline-none"
                               )
                             }
                           >
-                            {({ active, checked }) => (
+                            {({ checked }) => (
                               <>
                                 <Label
                                   as="p"
@@ -195,11 +194,10 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                                 </Label>
                                 <div
                                   className={classNames(
-                                    active ? "border" : "border-2",
                                     checked
                                       ? "border-orange-500"
                                       : "border-transparent",
-                                    "absolute -inset-px rounded-lg pointer-events-none"
+                                    "absolute -inset-px rounded-lg pointer-events-none border-2"
                                   )}
                                   aria-hidden="true"
                                 />
@@ -215,62 +213,58 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                 {/* Sizes */}
                 {productInfo.sizes.length > 0 && (
                   <div className="mt-5">
-                    {
-                      <RadioGroup
-                        value={selectedSize}
-                        onChange={setSelectedSize}
-                      >
-                        <Label className="block text-sm font-medium text-gray-700">
-                          Size
-                        </Label>
-                        <div className="mt-1 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                          {productInfo.sizes?.map((size) => (
-                            <Radio
-                              as="div"
-                              key={size}
-                              value={size}
-                              className={({ active }) =>
-                                classNames(
-                                  active ? "ring-2 ring-indigo-500" : "",
-                                  "relative block border border-gray-300 rounded-lg p-2 cursor-pointer focus:outline-none"
-                                )
-                              }
-                            >
-                              {({ active, checked }) => (
-                                <>
-                                  <Label
-                                    as="p"
-                                    className="text-base font-medium text-gray-900"
-                                  >
-                                    {size}
-                                  </Label>
-                                  <Description
-                                    as="p"
-                                    className="mt-1 text-sm text-gray-500"
-                                  ></Description>
-                                  <div
-                                    className={classNames(
-                                      active ? "border" : "border-2",
-                                      checked
-                                        ? "border-orange-500"
-                                        : "border-transparent",
-                                      "absolute -inset-px rounded-lg pointer-events-none"
-                                    )}
-                                    aria-hidden="true"
-                                  />
-                                </>
-                              )}
-                            </Radio>
-                          ))}
-                        </div>
-                      </RadioGroup>
-                    }
+                    <RadioGroup value={selectedSize} onChange={setSelectedSize}>
+                      <Label className="block text-sm font-medium text-gray-700">
+                        Size
+                      </Label>
+                      <div className="mt-1 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                        {productInfo.sizes?.map((size) => (
+                          <Radio
+                            as="div"
+                            key={size}
+                            value={size}
+                            className={({ checked }) =>
+                              classNames(
+                                checked ? "ring-2 ring-indigo-500" : "",
+                                "relative block border border-gray-300 rounded-lg p-2 cursor-pointer focus:outline-none"
+                              )
+                            }
+                          >
+                            {({ checked }) => (
+                              <>
+                                <Label
+                                  as="p"
+                                  className="text-base font-medium text-gray-900"
+                                >
+                                  {size}
+                                </Label>
+                                <Description
+                                  as="p"
+                                  className="mt-1 text-sm text-gray-500"
+                                ></Description>
+                                <div
+                                  className={classNames(
+                                    checked
+                                      ? "border-orange-500"
+                                      : "border-transparent",
+                                    "absolute -inset-px rounded-lg pointer-events-none border-2"
+                                  )}
+                                  aria-hidden="true"
+                                />
+                              </>
+                            )}
+                          </Radio>
+                        ))}
+                      </div>
+                    </RadioGroup>
                   </div>
                 )}
               </div>
 
               <div className="flex flex-col gap-2 mt-5">
-                <p className="block text-sm font-medium text-gray-700">Quantity</p>
+                <p className="block text-sm font-medium text-gray-700">
+                  Quantity
+                </p>
                 <div className="flex gap-4 items-center">
                   <MinusCircle
                     className="hover:text-red-1 cursor-pointer"
@@ -300,9 +294,7 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                   Add to bag
                 </button>
 
-                <div
-                  className="ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500"
-                >
+                <div className="ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500">
                   <ClickableHeart product={productInfo} />
                 </div>
               </div>
