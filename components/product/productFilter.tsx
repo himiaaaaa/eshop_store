@@ -36,19 +36,21 @@ export default function ProductFilter({
   sortOption,
   setSortOption,
 }: ProductFilterProps) {
-  const handleCategoryChange = (value: string) => {
-    setSelectedCategories((prev) => {
-      if (prev.includes(value)) {
-        if (prev.length === 1) {
-          return [];
+
+    const handleCategoryChange = (value: string): void => {
+        
+        let updatedCategories: string[];
+        
+        if (selectedCategories.includes(value)) {
+         
+          updatedCategories = selectedCategories.filter((category) => category !== value);
         } else {
-          return prev.filter((category) => category !== value);
+          
+          updatedCategories = [...selectedCategories, value];
         }
-      } else {
-        return [...prev, value];
-      }
-    });
-  };
+    
+        setSelectedCategories(updatedCategories);
+      };
 
   return (
     <div>
