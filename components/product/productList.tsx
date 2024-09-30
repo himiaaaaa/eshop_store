@@ -2,6 +2,7 @@ import { MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProducts } from "@/lib/actions/actions";
 import ProductCard from "./productCard";
+import Link from "next/link";
 
 const ProductList = async () => {
   const products = await getProducts();
@@ -16,7 +17,9 @@ const ProductList = async () => {
             <span className="text-orange-500">Best</span> Seller
           </h2>
           <Button className="gap-4" variant="ghost">
-            View all products <MoveRight className="w-4 h-4" />
+            <Link href='/products' className="flex flex-row items-center justify-center">
+              <p className="pr-2">View all products</p> <MoveRight className="w-4 h-4" />
+            </Link>
           </Button>
         </div>
 

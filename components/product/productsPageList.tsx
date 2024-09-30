@@ -38,7 +38,7 @@ const ProductsPageList = () => {
       } else if (sortOption === "Price: High to Low") {
         return b.price - a.price;
       } else if (sortOption === "Newest") {
-        return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime();
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       }
       return 0;
     });
