@@ -9,8 +9,8 @@ import ProductFilter from "./productFilter";
 const ProductsPageList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]); // State to manage selected categories
-  const [sortOption, setSortOption] = useState<string>("Newest"); // State to manage selected sort option
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]); 
+  const [sortOption, setSortOption] = useState<string>("Newest"); 
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -27,7 +27,7 @@ const ProductsPageList = () => {
     fetchProducts();
   }, []);
 
-  // Function to filter and sort products based on selected categories and sorting option
+
   const filteredProducts = products
     .filter((product) =>
       selectedCategories.length === 0 || selectedCategories.includes(product.category)
@@ -53,8 +53,8 @@ const ProductsPageList = () => {
         <ProductFilter
           selectedCategories={selectedCategories}
           setSelectedCategories={setSelectedCategories}
-          sortOption={sortOption} // Pass sort option to ProductFilter
-          setSortOption={setSortOption} // Pass function to update sort option
+          sortOption={sortOption}
+          setSortOption={setSortOption} 
         />
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 xl:gap-x-8">
           {filteredProducts.map((product: ProductType) => (
