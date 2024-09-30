@@ -300,12 +300,11 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                   Add to bag
                 </button>
 
-                <button
-                  type="button"
+                <div
                   className="ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500"
                 >
                   <ClickableHeart product={productInfo} />
-                </button>
+                </div>
               </div>
             </form>
 
