@@ -78,7 +78,7 @@ export default function Contact() {
               Get in touch
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl leading-normal text-gray-500 text-center">
-            Have questions about our selection of dog and cat food or toys? We're here to help! Reach out to us for personalized recommendations and support tailored to your pet's needs.
+            Have questions about our selection of dog and cat food or toys? We are here to help! Reach out to us for personalized recommendations and support tailored to your pet needs.
             </p>
           </div>
         </div>
@@ -315,7 +315,7 @@ export default function Contact() {
             </div>
           </form>
           <p className="mt-3 text-sm text-blue-gray-500">
-            We care about the protection of your data. Read our{" "}
+            We care about the protection of your data. Read our <span aria-hidden="true"> &rarr;</span>
             <a href="#" className="font-medium underline">
               Privacy Policy.
             </a>

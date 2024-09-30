@@ -31,7 +31,6 @@ type UserType = {
 };
 
 type OrderType = {
-  shippingAddress: Object;
   _id: string;
   customerClerkId: string;
   products: [OrderItemType]

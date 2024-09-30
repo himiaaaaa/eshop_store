@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Check, MinusCircle, PlusCircle } from "lucide-react";
 import useCart from "@/lib/hooks/useCart";
 import Image from "next/image";
@@ -297,10 +296,12 @@ export default function Cart() {
                 >
                   <div className="md:flex-shrink-0">
                     <div className="flow-root">
-                      <img
+                      <Image
                         className="-my-1 h-24 w-auto mx-auto"
                         src={policy.imageSrc}
                         alt=""
+                        width={100}
+                        height={100}
                       />
                     </div>
                   </div>

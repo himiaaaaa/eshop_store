@@ -14,7 +14,7 @@ const SuccessfulPayment = () => {
   return (
     <div className="h-screen flex flex-col justify-center items-center gap-5">
       <p className="text-sm font-semibold uppercase tracking-wide text-orange-600">Successful Payment!</p>
-      <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">Thank you! It's on the way!</p>
+      <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">Thank you! It is on the way!</p>
       <Link
         href="/"
         className="p-4 border text-base-bold hover:bg-orange-400 hover:text-white"

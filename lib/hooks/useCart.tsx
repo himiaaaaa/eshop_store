@@ -41,7 +41,7 @@ const useCart = create(
         toast.success("Item added to cart", { icon: "🛒" });
 
       },
-      removeItem: (idToRemove: String) => {
+      removeItem: (idToRemove: string) => {
 
         const filteredCartItems = get().cartItems.filter(
           (cartItem) => cartItem.item._id !== idToRemove
@@ -51,7 +51,7 @@ const useCart = create(
         toast.success("Item removed from cart");
 
       },
-      increaseQuantity: (idToIncrease: String) => {
+      increaseQuantity: (idToIncrease: string) => {
 
         const newCartItems = get().cartItems.map((cartItem) =>
 
@@ -64,7 +64,7 @@ const useCart = create(
         set({ cartItems: newCartItems });
         toast.success("Item quantity +1");
       },
-      decreaseQuantity: (idToDecrease: String) => {
+      decreaseQuantity: (idToDecrease: string) => {
 
         const newCartItems = get().cartItems.map((cartItem) =>
           cartItem.item._id === idToDecrease
