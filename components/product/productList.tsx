@@ -16,7 +16,7 @@ const ProductList = async () => {
           <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular">
             <span className="text-orange-600">Best</span> Seller
           </h2>
-          <Button className="gap-4" variant="ghost">
+          <Button className="gap-4 h-12 px-4" variant="ghost">
             <Link href='/products' className="flex flex-row items-center justify-center">
               <p className="pr-2">View all products</p> <MoveRight className="w-4 h-4" />
             </Link>

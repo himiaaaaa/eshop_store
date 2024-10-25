@@ -29,9 +29,9 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
                 Free Same-Day Delivery
-              </h5>
+              </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Order by 2pm local time to get free delivery on orders $35+
                 today.
@@ -50,9 +50,9 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
                 30 Day Return
-              </h5>
+              </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 35% off your first order plus 5% off all future orders.
               </p>
@@ -70,9 +70,9 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
                 Security payment
-              </h5>
+              </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 25% off your online order of $50+. Available at most locations.
               </p>
@@ -90,9 +90,9 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
                 24/7 Support
-              </h5>
+              </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Shop online to get orders over $35 shipped fast and free.
               </p>
