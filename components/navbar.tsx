@@ -97,7 +97,7 @@ export default function NavBar() {
                 {menuItems.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href}>
-                      <Button variant="link">{item.name}</Button>
+                      <Button variant="link" aria-label={item.name}>{item.name}</Button>
                     </Link>
                   </li>
                 ))}
@@ -207,7 +207,7 @@ export default function NavBar() {
                 {toggleMenuItems.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href}>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" aria-label={item.name}>
                         {item.name}
                       </Button>
                     </Link>
@@ -239,7 +239,7 @@ export default function NavBar() {
               {toggleMenuItems.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href}>
-                    <Button variant="ghost" size="sm">
+                    <Button variant="ghost" size="sm" aria-label={item.name}>
                       {item.name}
                     </Button>
                   </Link>
@@ -299,7 +299,7 @@ export default function NavBar() {
                 {toggleMenuItems.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href}>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" aria-label={item.name}>
                         {item.name}
                       </Button>
                     </Link>

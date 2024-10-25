@@ -187,6 +187,7 @@ export default function Cart() {
                                   type="button"
                                   className="ml-4 text-sm font-medium text-orange-600 hover:text-orange-500 sm:ml-0 sm:mt-5"
                                   onClick={() => cart.removeItem(cartItem.item._id)}
+                                  aria-label={`Remove ${cartItem.item._id} from cart`}
                                 >
                                   <span>Remove</span>
                                 </button>
@@ -257,6 +258,7 @@ export default function Cart() {
                     className="w-full bg-orange-500 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
                     onClick={handleCheckout}
                     type="submit"
+                    aria-label="Proceed to checkout"
                   >
                     Checkout
                   </button>

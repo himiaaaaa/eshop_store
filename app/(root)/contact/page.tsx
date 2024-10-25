@@ -309,6 +309,7 @@ export default function Contact() {
               <button
                 type="submit"
                 className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                aria-label="Notify me for updates"
               >
                 Notify me
               </button>
@@ -316,7 +317,7 @@ export default function Contact() {
           </form>
           <p className="mt-3 text-sm text-blue-gray-500">
             We care about the protection of your data. Read our <span aria-hidden="true"> &rarr;</span>
-            <a href="#" className="font-medium underline">
+            <a href="#" className="font-medium underline" aria-label="View our Privacy Policy">
               Privacy Policy.
             </a>
           </p>

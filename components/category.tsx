@@ -42,9 +42,6 @@ const CategorySection = () => {
           <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular">
             <span className="text-orange-500">Top</span> Categories
           </h2>
-          {/* <Button className="gap-4">
-            View all categories <MoveRight className="w-4 h-4" />
-          </Button> */}
         </div>
 
         {/* Grid Section */}
@@ -64,9 +61,7 @@ const CategorySection = () => {
                 />
               </div>
               <h3 className="text-xl tracking-tight">{category.name}</h3>
-              {/* <p className="text-muted-foreground text-base">
-                {category.description}
-              </p> */}
+
             </div>
           ))}
         </div>

@@ -290,6 +290,7 @@ const ProductOverview = ({ productInfo }: { productInfo: ProductType }) => {
                       size: selectedSize,
                     });
                   }}
+                  aria-label="Add to bag"
                 >
                   Add to bag
                 </button>

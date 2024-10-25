@@ -62,7 +62,7 @@ const ClickableHeart = ({ product, updateSignedInUser }: HeartFavoriteProps) => 
       {loading ? (
         <Loader />
       ) : (
-        <button onClick={handleLike}>
+        <button onClick={handleLike} aria-label={isLiked ? "Unlike" : "Like"} >
           <Heart fill={`${isLiked ? "orange" : "white"}`} />
         </button>
       )}
