@@ -12,7 +12,7 @@ const service = () => {
             alt="service icon"
           />
           <h2 className="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl">
-            <span className="text-orange-500">What your pet needs,</span> when
+            <span className="text-orange-600">What your pet needs,</span> when
             they need it.
           </h2>
         </div>
@@ -29,7 +29,7 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-500">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
                 Free Same-Day Delivery
               </h5>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
@@ -50,7 +50,7 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-500">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
                 30 Day Return
               </h5>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
@@ -70,7 +70,7 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-500">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
                 Security payment
               </h5>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
@@ -90,7 +90,7 @@ const service = () => {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-500">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-orange-600">
                 24/7 Support
               </h5>
               <p className="text-gray-600 dark:text-gray-300 text-sm">

@@ -9,7 +9,7 @@ export default function Footer() {
             <a href="#" className="text-3xl font-bold text-white">Paws</a>
             <p className="text-gray-300">
               If you have any question, please contact us at{' '}
-              <a href="mailto:support@gmail.com" className="text-orange-500 hover:underline">
+              <a href="mailto:support@gmail.com" className="text-orange-600 hover:underline">
                 support@gmail.com
               </a>
             </p>

@@ -40,7 +40,7 @@ const CategorySection = () => {
         {/* Header Section */}
         <div className="flex w-full px-4 flex-col sm:flex-row sm:justify-between sm:items-center gap-8">
           <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular">
-            <span className="text-orange-500">Top</span> Categories
+            <span className="text-orange-600">Top</span> Categories
           </h2>
         </div>
 
