@@ -25,17 +25,17 @@ export default function Footer() {
             </ul>
             <ul className="flex space-x-4">
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                <a href="#" className="text-gray-300 hover:text-primary transition-colors" aria-label="Follow us on Facebook">
                   <Facebook size={24} />
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                <a href="#" className="text-gray-300 hover:text-primary transition-colors" aria-label="Follow us on Twitter">
                   <Twitter size={24} />
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                <a href="#" className="text-gray-300 hover:text-primary transition-colors" aria-label="Follow us on Instagram">
                   <Instagram size={24} />
                 </a>
               </li>
