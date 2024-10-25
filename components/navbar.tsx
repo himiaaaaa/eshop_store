@@ -138,7 +138,7 @@ export default function NavBar() {
               )}
 
               <div className="relative">
-                <Link href="/cart">
+                <Link href="/cart" aria-label="View shopping cart">
                   <Button
                     variant="whiteghost"
                     size="icon"
@@ -264,7 +264,7 @@ export default function NavBar() {
 
             <div className="relative">
               <Button variant="ghost" size="icon" aria-label="Shopping Basket">
-                <Link href="/cart">
+                <Link href="/cart" aria-label="View shopping cart">
                   <ShoppingBasket className="h-4 w-4" />
                 </Link>
               </Button>
