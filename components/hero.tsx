@@ -22,8 +22,8 @@ export default function Hero() {
           <p className="text-center text-lg md:text-xl text-white mt-4">
             Sale up to 40% off today
           </p>
-          <Link href="/products" >
-            <Button variant="outline" className="mt-4 h-12 px-6 text-lg" aria-label="Shop Now">
+          <Link href="/products" className="mt-4">
+            <Button variant="outline" className="h-14 px-8 text-lg" aria-label="Shop Now">
               Shop Now
             </Button>
           </Link>
