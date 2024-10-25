@@ -13,6 +13,7 @@ export default function Hero() {
         width={2000}
         height={1000}
         className="w-screen min-h-[360px] object-cover"
+        priority={true}
       />
       <div className="absolute top-0 left-0 w-2/3 h-full flex items-center">
         <div className="container mx-auto px-6 py-6 md:px-8 lg:px-16 flex flex-col items-center">
