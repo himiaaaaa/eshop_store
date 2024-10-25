@@ -79,7 +79,7 @@ export default function NavBar() {
     <>
       {/* Main Header */}
       <header
-        className={`fixed h-16 bg-orange-600 shadow-sm top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out ${
+        className={`fixed h-16 bg-black shadow-sm top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out ${
           isScrolled
             ? "opacity-0 pointer-events-none"
             : "opacity-100 pointer-events-auto bg-none h-20"

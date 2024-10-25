@@ -16,7 +16,7 @@ const Collections = async () => {
                   {collection.title.split(' ').slice(0, -1).join(' ')}{' '}
                   <span className="text-orange-500">{collection.title.split(' ').slice(-1)}</span>
                 </h3>
-                <Link href={`/collections/${collection._id}`} className="btn bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-black transition-all">
+                <Link href={`/collections/${collection._id}`} className="btn bg-black text-white py-2 px-4 rounded-lg hover:bg-black transition-all">
                   Read More
                 </Link>
               </div>
