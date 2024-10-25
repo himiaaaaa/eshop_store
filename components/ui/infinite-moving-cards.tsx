@@ -85,7 +85,7 @@ const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <div
+          <li
             className=" relative rounded-2xl border flex-shrink-0 border-slate-100 px-8 py-6"
             style={{
               background:
@@ -94,7 +94,7 @@ const InfiniteMovingCards = ({
             key={idx}
           >
             <Image src={item.imageSrc} height={100} width={100} alt='brand image'/>
-          </div>
+          </li>
         ))}
       </ul>
     </div>
